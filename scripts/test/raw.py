@@ -1,0 +1,20 @@
+import os
+import urllib.request
+import json
+
+url = "https://api.anthropic.com/v1/messages"
+headers = {
+    "Content-Type": "application/json",
+    "x-api-key": os.environ["ANTHROPIC_API_KEY"],
+    "anthropic-version": "2023-06-01",
+}
+body = json.dumps({
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 256,
+    "messages": [{"role": "user", "content": "What is neural network in three words?"}],
+}).encode()
+
+req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+with urllib.request.urlopen(req) as resp:
+    result = json.loads(resp.read())
+    print(result["content"][0]["text"])
