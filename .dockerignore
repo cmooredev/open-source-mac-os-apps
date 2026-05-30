@@ -1,0 +1,27 @@
+# git
+.git
+
+# python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# environments
+venv
+.env
+.venv
+
+# huge AI stuff (IMPORTANT)
+models
+datasets
+data
+checkpoints
+outputs
+
+# notebooks clutter
+.ipynb_checkpoints
+
+# misc
+*.log
+.DS_Store
