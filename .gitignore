@@ -56,3 +56,7 @@ mlruns/
 
 .link-cache.json
 .claude/
+
+data/*.parquet
+data/*.csv
+models/
